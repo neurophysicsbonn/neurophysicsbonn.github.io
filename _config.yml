@@ -209,6 +209,9 @@ collections:
     output: true
   teachings:
     output: true
+  progress:
+    output: true
+    permalink: /progress/:path/
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
