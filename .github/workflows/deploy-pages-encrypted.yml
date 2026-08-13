@@ -66,6 +66,17 @@ jobs:
 
           rm "_site/progress/progress-source.html"
           
+      - name: Verify built progress page
+        run: |
+          echo "Contents of _site/progress:"
+          ls -lah "_site/progress/"
+          test -s "_site/progress/index.html"
+
+      - name: Prepare Pages artifact
+        run: |
+          touch _site/.nojekyll
+          find _site/progress -maxdepth 2 -type f -printf "%p (%s bytes)\n"
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
