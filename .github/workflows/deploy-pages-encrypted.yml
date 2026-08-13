@@ -60,18 +60,21 @@ jobs:
           test -n "$STATICRYPT_PASSWORD"
           test -f "_site/progress/index.html"
 
-          mkdir -p /tmp/progress-encrypted
-          cp "_site/progress/index.html" "/tmp/progress-encrypted/progress-source.html"
+          WORKDIR="/tmp/progress-encrypted"
+          rm -rf "$WORKDIR"
+          mkdir -p "$WORKDIR"
+          cp "_site/progress/index.html" "$WORKDIR/progress-source.html"
 
-          npx --yes staticrypt "/tmp/progress-encrypted/progress-source.html" \
-            --password "$STATICRYPT_PASSWORD"
+          cd "$WORKDIR"
+          npx --yes staticrypt progress-source.html --password "$STATICRYPT_PASSWORD"
 
-          echo "Staticrypt output:"
-          ls -lah "/tmp/progress-encrypted"
+          echo "Recursive contents of $WORKDIR after staticrypt:"
+          find "$WORKDIR" -type f -printf "%p (%s bytes)\n"
 
-          ENCRYPTED_FILE="$(find /tmp/progress-encrypted -maxdepth 1 -type f ! -name 'progress-source.html' -print -quit)"
+          ENCRYPTED_FILE="$(find "$WORKDIR" -type f ! -name 'progress-source.html' -print -quit)"
           test -n "$ENCRYPTED_FILE"
 
+          cd "$GITHUB_WORKSPACE"
           cp "$ENCRYPTED_FILE" "_site/progress/index.html"
 
           test -s "_site/progress/index.html"
