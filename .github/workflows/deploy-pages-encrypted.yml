@@ -55,16 +55,26 @@ jobs:
         env:
           STATICRYPT_PASSWORD: ${{ secrets.PROGRESS_PAGE_PASSWORD }}
         run: |
+          set -euo pipefail
+
           test -n "$STATICRYPT_PASSWORD"
           test -f "_site/progress/index.html"
 
-          mv "_site/progress/index.html" "_site/progress/progress-source.html"
+          mkdir -p /tmp/progress-encrypted
+          cp "_site/progress/index.html" "/tmp/progress-encrypted/progress-source.html"
 
-          npx --yes staticrypt "_site/progress/progress-source.html" \
-            --output "_site/progress/index.html" \
+          npx --yes staticrypt "/tmp/progress-encrypted/progress-source.html" \
             --password "$STATICRYPT_PASSWORD"
 
-          rm "_site/progress/progress-source.html"
+          echo "Staticrypt output:"
+          ls -lah "/tmp/progress-encrypted"
+
+          ENCRYPTED_FILE="$(find /tmp/progress-encrypted -maxdepth 1 -type f ! -name 'progress-source.html' -print -quit)"
+          test -n "$ENCRYPTED_FILE"
+
+          cp "$ENCRYPTED_FILE" "_site/progress/index.html"
+
+          test -s "_site/progress/index.html"
           
       - name: Verify built progress page
         run: |
