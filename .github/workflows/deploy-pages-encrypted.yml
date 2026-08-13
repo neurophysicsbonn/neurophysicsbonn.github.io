@@ -1,0 +1,63 @@
+name: Build, encrypt progress page, and deploy
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build --destination _site
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Encrypt internal progress page
+        env:
+          STATICRYPT_PASSWORD: ${{ secrets.PROGRESS_PAGE_PASSWORD }}
+        run: |
+          test -n "$STATICRYPT_PASSWORD"
+          test -f "_site/progress/index.html"
+          npx --yes staticrypt "_site/progress/index.html" \
+            --output "_site/progress/index.encrypted.html"
+          mv "_site/progress/index.encrypted.html" "_site/progress/index.html"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
