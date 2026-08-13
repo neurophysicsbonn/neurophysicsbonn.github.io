@@ -57,10 +57,15 @@ jobs:
         run: |
           test -n "$STATICRYPT_PASSWORD"
           test -f "_site/progress/index.html"
-          npx --yes staticrypt "_site/progress/index.html" \
-            --output "_site/progress/index.encrypted.html"
-          mv "_site/progress/index.encrypted.html" "_site/progress/index.html"
 
+          mv "_site/progress/index.html" "_site/progress/progress-source.html"
+
+          npx --yes staticrypt "_site/progress/progress-source.html" \
+            --output "_site/progress/index.html" \
+            --password "$STATICRYPT_PASSWORD"
+
+          rm "_site/progress/progress-source.html"
+          
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
