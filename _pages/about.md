@@ -27,8 +27,46 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+## About
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I am a physicist at the University Hospital Bonn, working at the interface of complex systems and nonlinear dynamics with a special focus on brain dynamics and epileptology. My research centers on nonlinear time-series analysis, network theory, ordinal pattern analysis, symbolic dynamics, and complexity measures.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+## Neurophysics Bonn Lab
+
+The Neurophysics Bonn Lab studies:
+
+- Network theory in brain and complex systems:
+  - Centrality concepts and directed connectivity
+  - Functional networks and effective connectivity
+  - Interplay of structure and function in complex systems
+- Advancing reservoir computing approaches:
+  - Dynamics-informed reservoir computing
+  - Applications to neural and physiological time series
+- EEG-based brain dynamics with special emphasis on:
+  - Epilepsy, SUDEP, and seizure prediction
+  - Consciousness, anesthesia depth, and complexity metrics
+  - Sleep neurophysiology and sleep-stage dynamics
+- Extreme events in model systems and nature:
+  - Epileptic seizures as extreme events in neuronal networks
+  - Extreme weather events and climate variability
+
+We combine nonlinear time-series analysis, network theory, and machine learning with real-world data to understand the intricate and emergent dynamics of complex systems such as the brain and its (dys)function across physiology and disease.
+
+## Research interests
+
+- Reservoir Computing and machine learning (for neuroscience)
+- Symbolic Dynamics
+- Nonlinear dynamics and chaos in physiological signals  
+- Time-series analysis and EEG signal processing 
+- Complexity measures for consciousness and anesthesia depth
+
+## Software and tools
+
+We develop open-source analysis tools in Python and related ecosystems, focusing on:
+- Ordinal pattern and symbolic dynamics toolboxes
+- Complexity and entropy libraries for EEG and time series
+- Reproducible pipelines for clinical and research data
+
+## Supervision and collaboration
+
+I supervise BSc, MSc, and PhD projects and collaborate internationally on complexity science and physics‑ and neuroscience‑based research. If you are interested in a thesis or collaboration, feel free to contact me.
