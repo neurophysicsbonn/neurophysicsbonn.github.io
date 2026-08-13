@@ -71,8 +71,12 @@ jobs:
           echo "Recursive contents of $WORKDIR after staticrypt:"
           find "$WORKDIR" -type f -printf "%p (%s bytes)\n"
 
-          ENCRYPTED_FILE="$(find "$WORKDIR" -type f ! -name 'progress-source.html' -print -quit)"
+          ENCRYPTED_FILE="$(find "$WORKDIR" -type f -name '*.html' ! -name 'progress-source.html' -print -quit)"
           test -n "$ENCRYPTED_FILE"
+
+          echo "Selected encrypted file: $ENCRYPTED_FILE"
+          head -c 200 "$ENCRYPTED_FILE"
+          echo
 
           cd "$GITHUB_WORKSPACE"
           cp "$ENCRYPTED_FILE" "_site/progress/index.html"
