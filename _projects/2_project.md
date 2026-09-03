@@ -1,18 +1,16 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
+title: Proxy Data for Extreme Events
+description: A Dynamics Reservoir Computing Framework
 img: assets/img/3.jpg
 importance: 2
 category: work
 giscus_comments: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
-
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+Extreme events — rare, high-impact occurrences such as epileptic seizures, financial crashes, extreme weather phenomena, and infrastructure failures — present a fundamental challenge for scientific modelling: they are inherently rare, difficult to reproduce, and yield only sparse empirical data. This scarcity limits the applicability of conventional statistical and machine learning frameworks that rely on robust sample sizes.
+This project develops a novel hybrid methodology combining Ordinal Pattern Transition Networks (OPTNs) and Reservoir Computing (RC) — termed Dynamics Reservoir Computing (DRC) — to generate high-fidelity proxy time series that faithfully replicate the dynamical signatures of transitions into extreme events from limited observations. 
+OPTNs provide a model-free symbolic representation of system dynamics, while a dynamics-informed reservoir architecture captures structured temporal dependencies from sparse data. By conditioning the reservoir on topological features extracted via OPTNs, the framework generates proxy sequences that preserve both the statistical and topological signatures of the original extreme event.
 
     ---
     layout: page
@@ -23,25 +21,11 @@ To give your project a background in the portfolio page, just add the img tag to
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/PDEV/front.png" title="header" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
+    From observing an extreme event in the real world to generating dynamically faithful proxy data.
 </div>
 
 You can also put regular text between your rows of images.
