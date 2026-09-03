@@ -12,12 +12,6 @@ Extreme events — rare, high-impact occurrences such as epileptic seizures, fin
 This project develops a novel hybrid methodology combining Ordinal Pattern Transition Networks (OPTNs) and Reservoir Computing (RC) — termed Dynamics Reservoir Computing (DRC) — to generate high-fidelity proxy time series that faithfully replicate the dynamical signatures of transitions into extreme events from limited observations. 
 OPTNs provide a model-free symbolic representation of system dynamics, while a dynamics-informed reservoir architecture captures structured temporal dependencies from sparse data. By conditioning the reservoir on topological features extracted via OPTNs, the framework generates proxy sequences that preserve both the statistical and topological signatures of the original extreme event.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
