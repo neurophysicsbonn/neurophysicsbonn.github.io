@@ -1,25 +1,21 @@
 ---
 layout: page
-title: project 1
-description: with background image
+title: Proxy Replica Brain (PRB)
+description:  A multilevel multilayer network approach to epileptic brain dynamics
 img: assets/img/12.jpg
 importance: 1
 category: work
 related_publications: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+The PRB project develops an innovative in silico model for the personalized characterization and prediction of epileptic seizures. 
+Its scientific innovation lies in a fundamentally new in silico methodology consisting of three synergistic components:
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+1. **Directed multilayer networks:** Functional interaction networks capture both connection strength and directional information between brain regions using Ordinal Pattern Transition Networks (OPTNs).
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+2. **Dynamics-informed reservoir computing:** Integrating brain-specific OPTN structures into reservoir architectures replaces traditional random topologies and reduces the need for hyperparameter optimization.
+
+3. **Clinical translation through FPGA technology:** A real-time FPGA implementation enables operational seizure prediction in a portable technology suitable for clinical settings.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -44,9 +40,7 @@ To give your project a background in the portfolio page, just add the img tag to
     This image can also have a caption. It's like magic.
 </div>
 
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+The extensive EEG database of the Department of Epileptology at University Hospital Bonn enables retrospective validation of this innovative approach and supports the efficient development of an FPGA prototype for clinical studies. 
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
