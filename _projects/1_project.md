@@ -33,11 +33,11 @@ Its scientific innovation lies in a fundamentally new in silico methodology cons
 </div>
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/PRB/header.png" title="header" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    This image can also have a caption. It's like magic.
+    Conceptual workflow of the Proxy Replica Brain project, linking directed multilayer brain networks, dynamics-informed reservoir computing, and FPGA-based real-time seizure prediction.
 </div>
 
 The extensive EEG database of the Department of Epileptology at University Hospital Bonn enables retrospective validation of this innovative approach and supports the efficient development of an FPGA prototype for clinical studies. 
